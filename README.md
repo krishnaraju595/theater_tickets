@@ -9,7 +9,7 @@ docker-compose up
 ### The application running on port: 9000
 ### Swagger Docs Endpoint: http://localhost:9000/api-docs
 ### We can access all endpoints using swagger docs and before accessing any endpoint we need JWT token.
-### In swagger, there is an API like ***A(GET:  /api/token)***A - This will give you the token and validity is 60min
+### In swagger, there is an API like ***(GET:  /api/token)*** - This will give you the token and validity is 60min
 ### We need to set this token in the swagger Authorize section before accessing any endpoints other than the token endpoint
 
-> Note:By default there no data in DB.Please create some records using POST API ***A( POST: api/tickets)***A
+> Note:By default there no data in DB.Please create some records using POST API ***( POST: api/tickets)***
