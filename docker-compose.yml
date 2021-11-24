@@ -1,0 +1,32 @@
+version: '2'
+services:
+  node_backend:
+    container_name: node_backend
+    image: node-test:1.0.0
+    build: 
+      context: .
+    environment:
+      - EXTERNAL_PORT=9000
+      - POSTGRES_USER=demouser
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=defaultdb
+      - PGHOST=db
+    ports:
+      - "9000:80"
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: 'postgres:12'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=demouser
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=defaultdb
+    volumes:
+      - pgdata1:/var/lib/postgresql/date
+
+volumes:
+  pgdata1: {}
